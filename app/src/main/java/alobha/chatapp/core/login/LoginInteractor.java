@@ -15,11 +15,6 @@ import alobha.chatapp.util.SharedPrefUtil;
 
 import static android.content.ContentValues.TAG;
 
-/**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 11:10 AM
- * Project: FirebaseChat
- */
 
 public class LoginInteractor implements LoginContract.Interactor {
     private LoginContract.OnLoginListener mOnLoginListener;

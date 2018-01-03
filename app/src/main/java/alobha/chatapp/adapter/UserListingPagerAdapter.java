@@ -7,16 +7,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import alobha.chatapp.fragments.UsersFragment;
 
 
-/**
- * Author: Kartik Sharma
- * Created on: 9/4/2016 , 12:03 PM
- * Project: FirebaseChat
- */
 
 public class UserListingPagerAdapter extends FragmentPagerAdapter {
-    private static final Fragment[] sFragments = new Fragment[]{/*UsersFragment.newInstance(UsersFragment.TYPE_CHATS),*/
+    private static final Fragment[] sFragments = new Fragment[]{
+            /*UsersFragment.newInstance(UsersFragment.TYPE_CHATS),*/
             UsersFragment.newInstance(UsersFragment.TYPE_ALL)};
-    private static final String[] sTitles = new String[]{/*"Chats",*/
+    private static final String[] sTitles = new String[]{
+            /*"Chats",*/
             "All Users"};
 
     public UserListingPagerAdapter(FragmentManager fm) {

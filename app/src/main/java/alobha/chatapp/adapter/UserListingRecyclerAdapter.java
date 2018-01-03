@@ -13,11 +13,6 @@ import java.util.List;
 import alobha.chatapp.R;
 import alobha.chatapp.model.User;
 
-/**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 2:23 PM
- * Project: FirebaseChat
- */
 
 public class UserListingRecyclerAdapter extends RecyclerView.Adapter<UserListingRecyclerAdapter.ViewHolder> {
     private List<User> mUsers;
@@ -43,7 +38,9 @@ public class UserListingRecyclerAdapter extends RecyclerView.Adapter<UserListing
 
         String alphabet = user.email.substring(0, 1);
 
-        holder.txtUsername.setText(user.email);
+        String name=user.email.substring(0, user.email.lastIndexOf("@"));
+
+        holder.txtUsername.setText(name);
         holder.txtUserAlphabet.setText(alphabet);
     }
 

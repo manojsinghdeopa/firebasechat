@@ -22,9 +22,7 @@ import alobha.chatapp.core.users.add.AddUserContract;
 import alobha.chatapp.core.users.add.AddUserPresenter;
 
 /**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 10:36 AM
- * Project: FirebaseChat
+ * Author: Manoj singh Deopa
  */
 
 public class RegisterFragment extends Fragment implements View.OnClickListener, RegisterContract.View, AddUserContract.View {

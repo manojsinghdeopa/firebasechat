@@ -14,11 +14,6 @@ import alobha.chatapp.model.User;
 import alobha.chatapp.util.Constants;
 import alobha.chatapp.util.SharedPrefUtil;
 
-/**
- * Author: Kartik Sharma
- * Created on: 9/2/2016 , 10:08 PM
- * Project: FirebaseChat
- */
 
 public class AddUserInteractor implements AddUserContract.Interactor {
     private AddUserContract.OnUserDatabaseListener mOnUserDatabaseListener;

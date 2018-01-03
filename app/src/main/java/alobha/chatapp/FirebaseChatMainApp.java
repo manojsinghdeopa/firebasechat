@@ -3,9 +3,7 @@ package alobha.chatapp;
 import android.app.Application;
 
 /**
- * Author: Kartik Sharma
- * Created on: 10/16/2016 , 9:35 PM
- * Project: FirebaseChat
+ * Author: Manoj Singh Deopa
  */
 
 public class FirebaseChatMainApp extends Application {

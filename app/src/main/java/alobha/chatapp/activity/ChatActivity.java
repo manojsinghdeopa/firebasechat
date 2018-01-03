@@ -17,7 +17,7 @@ import alobha.chatapp.util.Constants;
 public class ChatActivity extends AppCompatActivity {
     private Toolbar mToolbar;
 
-    public static void startActivity(Context context,String receiver,String receiverUid,String firebaseToken) {
+    public static void startActivity(Context context, String receiver, String receiverUid, String firebaseToken) {
         Intent intent = new Intent(context, ChatActivity.class);
         intent.putExtra(Constants.ARG_RECEIVER, receiver);
         intent.putExtra(Constants.ARG_RECEIVER_UID, receiverUid);
@@ -38,12 +38,15 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void init() {
-        // set the toolbar
         setSupportActionBar(mToolbar);
-        TextView title=(TextView) mToolbar.findViewById(R.id.title);
-        // set toolbar title
-        title.setText(getIntent().getExtras().getString(Constants.ARG_RECEIVER));
+        TextView title = (TextView) mToolbar.findViewById(R.id.title);
+        String usename = getIntent().getExtras().getString(Constants.ARG_RECEIVER);
+        String name = usename.substring(0, usename.lastIndexOf("@"));
+
+        title.setText(name);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         // set the register screen fragment
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout_content_chat,
@@ -70,7 +73,7 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finish(); // close this activity and return to preview activity (if there is any)
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

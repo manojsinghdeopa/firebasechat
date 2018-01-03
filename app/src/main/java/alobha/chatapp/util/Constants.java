@@ -1,9 +1,7 @@
 package alobha.chatapp.util;
 
 /**
- * Author: Kartik Sharma
- * Created on: 9/2/2016 , 10:12 PM
- * Project: FirebaseChat
+ * Author: Manoj Singh Deopa
  */
 
 public class Constants {

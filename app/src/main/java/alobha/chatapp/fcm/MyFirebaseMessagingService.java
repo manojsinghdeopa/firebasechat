@@ -24,19 +24,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
 
-    /**
-     * Called when message is received.
-     *
-     * @param remoteMessage Object representing the message received from Firebase Cloud Messaging.
-     */
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
-        // TODO(developer): Handle FCM messages here.
-        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
-        // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
 
@@ -46,10 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             String uid = remoteMessage.getData().get("uid");
             String fcmToken = remoteMessage.getData().get("fcm_token");
 
-           // EventBus.getDefault().post(new PushNotificationEvent(title,message,username,uid,fcmToken));
 
-
-            // Don't show notification if chat activity is open.
             if (!FirebaseChatMainApp.isChatActivityOpen()) {
                 sendNotification(title,
                         message,
@@ -66,9 +55,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }
 
-    /**
-     * Create and show a simple notification containing the received FCM message.
-     */
     private void sendNotification(String title,
                                   String message,
                                   String receiver,

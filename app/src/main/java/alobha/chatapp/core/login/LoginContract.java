@@ -2,11 +2,6 @@ package alobha.chatapp.core.login;
 
 import android.app.Activity;
 
-/**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 11:06 AM
- * Project: FirebaseChat
- */
 
 public interface LoginContract {
     interface View {

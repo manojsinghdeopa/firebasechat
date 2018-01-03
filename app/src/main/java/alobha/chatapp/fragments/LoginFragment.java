@@ -20,10 +20,8 @@ import alobha.chatapp.core.login.LoginContract;
 import alobha.chatapp.core.login.LoginPresenter;
 
 
-/**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 10:36 AM
- * Project: FirebaseChat
+/*
+ * Author: Manoj Singh Deopa
  */
 
 public class LoginFragment extends Fragment implements View.OnClickListener, LoginContract.View {
@@ -76,7 +74,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     }
 
     private void setDummyCredentials() {
-        mETxtEmail.setText("manoj.alobha@gmail.com");
+        mETxtEmail.setText("manoj@gmail.com");
         mETxtPassword.setText("1234567");
     }
 
@@ -95,19 +93,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     }
 
     private void onLogin(View view) {
-        String emailId = mETxtEmail.getText().toString();
-        String password = mETxtPassword.getText().toString();
+        String emailId = mETxtEmail.getText().toString().trim();
+        String password = mETxtPassword.getText().toString().trim();
 
-        if(TextUtils.isEmpty(emailId))
-        {
+        if (TextUtils.isEmpty(emailId)) {
             Toast.makeText(getActivity(), "Please Enter Your Email !", Toast.LENGTH_SHORT).show();
-        }
-        else if(TextUtils.isEmpty(password))
-        {
+        } else if (TextUtils.isEmpty(password)) {
             Toast.makeText(getActivity(), "Please Enter Your Password !", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
+        } else {
             mLoginPresenter.login(getActivity(), emailId, password);
             mProgressDialog.show();
         }
@@ -123,7 +116,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     public void onLoginSuccess(String message) {
         mProgressDialog.dismiss();
         Toast.makeText(getActivity(), "Logged in successfully", Toast.LENGTH_SHORT).show();
-        UserListingActivity.startActivity(getActivity(),Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        UserListingActivity.startActivity(getActivity(), Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
     @Override

@@ -15,11 +15,6 @@ import java.util.List;
 import alobha.chatapp.model.User;
 import alobha.chatapp.util.Constants;
 
-/**
- * Author: Kartik Sharma
- * Created on: 9/2/2016 , 10:08 PM
- * Project: FirebaseChat
- */
 
 public class GetUsersInteractor implements GetUsersContract.Interactor {
     private static final String TAG = "GetUsersInteractor";

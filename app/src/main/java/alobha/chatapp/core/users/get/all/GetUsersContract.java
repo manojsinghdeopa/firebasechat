@@ -4,11 +4,6 @@ import java.util.List;
 
 import alobha.chatapp.model.User;
 
-/**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 11:06 AM
- * Project: FirebaseChat
- */
 
 public interface GetUsersContract {
     interface View {

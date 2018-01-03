@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 
-
 import java.util.List;
 
 import alobha.chatapp.R;
@@ -24,9 +23,7 @@ import alobha.chatapp.model.User;
 import alobha.chatapp.util.ItemClickSupport;
 
 /**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 10:36 AM
- * Project: FirebaseChat
+ * Author: Manoj Singh Deopa
  */
 
 public class UsersFragment extends Fragment implements GetUsersContract.View, ItemClickSupport.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {

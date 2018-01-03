@@ -2,11 +2,7 @@ package alobha.chatapp.model;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
-/**
- * Author: Kartik Sharma
- * Created on: 9/1/2016 , 8:35 PM
- * Project: FirebaseChat
- */
+
 
 @IgnoreExtraProperties
 public class User {

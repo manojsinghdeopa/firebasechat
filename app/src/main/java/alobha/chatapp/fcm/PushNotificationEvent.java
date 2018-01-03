@@ -1,9 +1,7 @@
 package alobha.chatapp.fcm;
 
 /**
- * Author: Kartik Sharma
- * Created on: 10/18/2016 , 10:16 PM
- * Project: FirebaseChat
+ * Author: Manoj Singh Deopa
  */
 
 public class PushNotificationEvent {

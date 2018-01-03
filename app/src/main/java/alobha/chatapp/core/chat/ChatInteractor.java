@@ -15,11 +15,6 @@ import alobha.chatapp.model.Chat;
 import alobha.chatapp.util.Constants;
 import alobha.chatapp.util.SharedPrefUtil;
 
-/**
- * Author: Kartik Sharma
- * Created on: 9/2/2016 , 10:08 PM
- * Project: FirebaseChat
- */
 
 public class ChatInteractor implements ChatContract.Interactor {
     private static final String TAG = "ChatInteractor";

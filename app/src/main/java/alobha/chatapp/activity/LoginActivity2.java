@@ -39,11 +39,9 @@ public class LoginActivity2 extends AppCompatActivity {
     }
 
     private void init() {
-        // set the toolbar
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // set the login screen fragment
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout_content_login, LoginFragment.newInstance(),LoginFragment.class.getSimpleName());
         fragmentTransaction.commit();
@@ -52,7 +50,7 @@ public class LoginActivity2 extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finish(); // close this activity and return to preview activity (if there is any)
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

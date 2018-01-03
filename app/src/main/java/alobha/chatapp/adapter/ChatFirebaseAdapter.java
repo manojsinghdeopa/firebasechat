@@ -17,9 +17,6 @@ import alobha.chatapp.R;
 import alobha.chatapp.model.ChatModel;
 
 
-/**
- * Created by Alessandro Barreto on 23/06/2016.
- */
 public class ChatFirebaseAdapter extends FirebaseRecyclerAdapter<ChatModel,ChatFirebaseAdapter.MyChatViewHolder> {
 
     private static final int RIGHT_MSG = 0;

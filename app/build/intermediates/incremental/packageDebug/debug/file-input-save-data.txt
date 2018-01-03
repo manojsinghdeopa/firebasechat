@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Fri Dec 29 18:27:05 IST 2017
+#Wed Jan 03 20:05:08 IST 2018
 0.baseType=DIRECTORY
-0.base=/home/manoj/AndroidWorkSpace/FirebaseChat/app/build/intermediates/transforms/dexMerger/debug/0
+0.base=/home/manoj/AndroidWorkSpace/firebasechat/app/build/intermediates/transforms/dexMerger/debug/0
 0.path=classes.dex
 0.set=DEX
 count=1

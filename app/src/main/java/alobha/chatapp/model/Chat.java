@@ -4,11 +4,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.io.File;
 
-/**
- * Author: Kartik Sharma
- * Created on: 9/4/2016 , 12:43 PM
- * Project: FirebaseChat
- */
+
 
 @IgnoreExtraProperties
 public class Chat {

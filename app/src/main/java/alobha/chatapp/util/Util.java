@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.widget.Toast;
 
 /**
- * Created by Alessandro Barreto on 23/06/2016.
+ * Created by Manoj Singh Deopa.
  */
 public class Util {
 

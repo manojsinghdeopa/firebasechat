@@ -1,6 +1,21 @@
 {
     "logs": [
         {
+            "outputFile": "/home/manoj/AndroidWorkSpace/firebasechat/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/home/manoj/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/739e854a7af7d4f54b6e983ab8092e65/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "/home/manoj/AndroidWorkSpace/FirebaseChat/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {

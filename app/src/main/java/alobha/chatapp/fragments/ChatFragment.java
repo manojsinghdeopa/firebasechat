@@ -78,9 +78,7 @@ import alobha.chatapp.util.Util;
 import static android.app.Activity.RESULT_OK;
 
 /**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 10:36 AM
- * Project: FirebaseChat
+ * Author: Manoj Singh Deopa
  */
 
 public class ChatFragment extends Fragment implements GoogleApiClient.OnConnectionFailedListener, ChatContract.View, View.OnClickListener ,ClickListenerChatFirebase {

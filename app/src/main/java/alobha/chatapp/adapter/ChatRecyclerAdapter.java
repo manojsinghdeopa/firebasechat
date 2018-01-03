@@ -19,11 +19,6 @@ import alobha.chatapp.activity.FullScreenImageActivity;
 import alobha.chatapp.model.Chat;
 import alobha.chatapp.model.ChatModel;
 
-/**
- * Author: Kartik Sharma
- * Created on: 10/16/2016 , 10:36 AM
- * Project: FirebaseChat
- */
 
 public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final int VIEW_TYPE_ME = 1;
