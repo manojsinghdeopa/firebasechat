@@ -6,9 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.support.v4.app.NotificationCompat;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -18,6 +22,7 @@ import alobha.chatapp.FirebaseChatMainApp;
 import alobha.chatapp.MainActivity;
 import alobha.chatapp.R;
 import alobha.chatapp.util.Constants;
+import alobha.chatapp.util.SharedPrefUtil;
 
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -81,5 +86,24 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(0, notificationBuilder.build());
+    }
+
+    @Override
+    public void onNewToken(@NonNull String s) {
+        super.onNewToken(s);
+        sendRegistrationToServer(s);
+    }
+
+    private void sendRegistrationToServer(final String token) {
+        new SharedPrefUtil(getApplicationContext()).saveString(Constants.ARG_FIREBASE_TOKEN, token);
+
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            FirebaseDatabase.getInstance()
+                    .getReference()
+                    .child(Constants.ARG_USERS)
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .child(Constants.ARG_FIREBASE_TOKEN)
+                    .setValue(token);
+        }
     }
 }

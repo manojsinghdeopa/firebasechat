@@ -7,4 +7,5 @@
     <string name="google_app_id" translatable="false">1:809437612181:android:076375838e64ea32</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyABZ5CwVWedY9XcumectGhQkkzDtbpTB30</string>
     <string name="google_storage_bucket" translatable="false">alobhachatapp.appspot.com</string>
+    <string name="project_id" translatable="false">alobhachatapp</string>
 </resources>

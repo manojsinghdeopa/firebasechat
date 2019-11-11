@@ -1,5 +1,6 @@
 package alobha.chatapp.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -7,29 +8,25 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -55,11 +52,9 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 import alobha.chatapp.BuildConfig;
-import alobha.chatapp.MainActivity;
 import alobha.chatapp.R;
 import alobha.chatapp.activity.FullScreenImageActivity;
 import alobha.chatapp.adapter.ChatRecyclerAdapter;
@@ -68,7 +63,6 @@ import alobha.chatapp.core.chat.ChatContract;
 import alobha.chatapp.core.chat.ChatPresenter;
 import alobha.chatapp.fcm.PushNotificationEvent;
 import alobha.chatapp.model.Chat;
-import alobha.chatapp.model.ChatModel;
 import alobha.chatapp.model.FileModel;
 import alobha.chatapp.model.MapModel;
 import alobha.chatapp.model.UserModel;
@@ -433,7 +427,7 @@ public class ChatFragment extends Fragment implements GoogleApiClient.OnConnecti
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Log.i(TAG,"onSuccess sendFileFirebase");
-                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                    Uri downloadUrl = taskSnapshot.getUploadSessionUri();
                     FileModel fileModel = new FileModel("img",downloadUrl.toString(),name,"");
 
                     String message = "";
@@ -470,7 +464,7 @@ public class ChatFragment extends Fragment implements GoogleApiClient.OnConnecti
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Log.i(TAG,"onSuccess sendFileFirebase");
-                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                    Uri downloadUrl = taskSnapshot.getUploadSessionUri();
                     FileModel fileModel = new FileModel("img",downloadUrl.toString(),file.getName(),file.length()+"");
 
 
@@ -494,6 +488,7 @@ public class ChatFragment extends Fragment implements GoogleApiClient.OnConnecti
     }
 
 
+    @SuppressLint("RestrictedApi")
     public void animateFAB(){
 
         if(isFabOpen){

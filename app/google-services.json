@@ -8,89 +8,30 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:809437612181:android:076375838e64ea32",
+        "mobilesdk_app_id": "1:809437612181:android:67a14634b199c47f8cb39c",
         "android_client_info": {
           "package_name": "alobha.chatapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "809437612181-lnse7kughmnas0d0t8nfts6arcm6d5uf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "alobha.chatapp",
-            "certificate_hash": "7aa8337cded9a9cf2c5e184d913a97b6849a6891"
-          }
-        },
-        {
-          "client_id": "809437612181-9fpktad3lplhl8hs17gghd47e7sbtjcr.apps.googleusercontent.com",
+          "client_id": "809437612181-q80u2gucufj949flfhodtblhjp5l5ogp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyABZ5CwVWedY9XcumectGhQkkzDtbpTB30"
+          "current_key": "AIzaSyAb_JqxXEkyYzrkQMdzBWDEbqVtxPQ7rsk"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "809437612181-9fpktad3lplhl8hs17gghd47e7sbtjcr.apps.googleusercontent.com",
+              "client_id": "809437612181-q80u2gucufj949flfhodtblhjp5l5ogp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:809437612181:android:932399bebd89bff2",
-        "android_client_info": {
-          "package_name": "com.crazyhitty.chdev.ks.firebasechat"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "809437612181-uj8iqmnbnv55526aotksrc2rd4iutt11.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.crazyhitty.chdev.ks.firebasechat",
-            "certificate_hash": "7aa8337cded9a9cf2c5e184d913a97b6849a6891"
-          }
-        },
-        {
-          "client_id": "809437612181-9fpktad3lplhl8hs17gghd47e7sbtjcr.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyABZ5CwVWedY9XcumectGhQkkzDtbpTB30"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "809437612181-9fpktad3lplhl8hs17gghd47e7sbtjcr.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

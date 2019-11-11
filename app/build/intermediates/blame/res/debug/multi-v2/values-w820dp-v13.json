@@ -1,33 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/home/manoj/AndroidWorkSpace/FirebaseChat/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "E:\\Firebase-Chat\\firebasechat\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/manoj/AndroidWorkSpace/FirebaseChat/app/src/main/res/values-w820dp/dimens.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "291",
-                        "endColumns": "57",
-                        "endOffsets": "344"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "57",
-                        "endOffsets": "108"
-                    }
-                },
-                {
-                    "source": "/home/manoj/AndroidWorkSpace/FirebaseChat/app/src/main/res/values-w820dp/ids.xml",
+                    "source": "E:\\Firebase-Chat\\firebasechat\\app\\src\\main\\res\\values-w820dp\\ids.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "55",
+                        "startOffsets": "57",
                         "endColumns": "48",
-                        "endOffsets": "99"
+                        "endOffsets": "101"
                     },
                     "to": {
                         "startLines": "3",
@@ -36,20 +19,15 @@
                         "endColumns": "47",
                         "endOffsets": "156"
                     }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/manoj/AndroidWorkSpace/firebasechat/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
-            "map": [
+                },
                 {
-                    "source": "/home/manoj/AndroidWorkSpace/firebasechat/app/src/main/res/values-w820dp/dimens.xml",
+                    "source": "E:\\Firebase-Chat\\firebasechat\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "4",
-                        "startOffsets": "291",
+                        "startOffsets": "295",
                         "endColumns": "57",
-                        "endOffsets": "344"
+                        "endOffsets": "348"
                     },
                     "to": {
                         "startLines": "2",
@@ -57,23 +35,6 @@
                         "startOffsets": "55",
                         "endColumns": "57",
                         "endOffsets": "108"
-                    }
-                },
-                {
-                    "source": "/home/manoj/AndroidWorkSpace/firebasechat/app/src/main/res/values-w820dp/ids.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "48",
-                        "endOffsets": "99"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "113",
-                        "endColumns": "47",
-                        "endOffsets": "156"
                     }
                 }
             ]

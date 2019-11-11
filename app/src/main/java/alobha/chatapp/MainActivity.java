@@ -1,18 +1,19 @@
 package alobha.chatapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
@@ -31,7 +32,6 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,7 +46,6 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
-import alobha.chatapp.activity.ChatActivity;
 import alobha.chatapp.activity.FullScreenImageActivity;
 import alobha.chatapp.activity.LoginActivity;
 import alobha.chatapp.activity.UserListingActivity;
@@ -54,7 +53,6 @@ import alobha.chatapp.adapter.ChatFirebaseAdapter;
 import alobha.chatapp.adapter.ClickListenerChatFirebase;
 import alobha.chatapp.model.ChatModel;
 import alobha.chatapp.model.FileModel;
-import alobha.chatapp.model.MapModel;
 import alobha.chatapp.model.UserModel;
 import alobha.chatapp.util.Util;
 
@@ -122,35 +120,36 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
         StorageReference storageRef = storage.getReferenceFromUrl(Util.URL_STORAGE_REFERENCE).child(Util.FOLDER_STORAGE_IMG);
 
-        if (requestCode == IMAGE_GALLERY_REQUEST){
-            if (resultCode == RESULT_OK){
+        if (requestCode == IMAGE_GALLERY_REQUEST) {
+            if (resultCode == RESULT_OK) {
                 Uri selectedImageUri = data.getData();
-                if (selectedImageUri != null){
-                    sendFileFirebase(storageRef,selectedImageUri);
-                }else{
+                if (selectedImageUri != null) {
+                    sendFileFirebase(storageRef, selectedImageUri);
+                } else {
                     //URI IS NULL
                 }
             }
-        }else if (requestCode == IMAGE_CAMERA_REQUEST){
-            if (resultCode == RESULT_OK){
-                if (filePathImageCamera != null && filePathImageCamera.exists()){
-                    StorageReference imageCameraRef = storageRef.child(filePathImageCamera.getName()+"_camera");
-                    sendFileFirebase(imageCameraRef,filePathImageCamera);
-                }else{
+        } else if (requestCode == IMAGE_CAMERA_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                if (filePathImageCamera != null && filePathImageCamera.exists()) {
+                    StorageReference imageCameraRef = storageRef.child(filePathImageCamera.getName() + "_camera");
+                    sendFileFirebase(imageCameraRef, filePathImageCamera);
+                } else {
                     //IS NULL
                 }
             }
-        }else if (requestCode == PLACE_PICKER_REQUEST){
+        } else if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
                 Place place = PlacePicker.getPlace(this, data);
-                if (place!=null){
+                if (place != null) {
 //                    LatLng latLng = place.getLatLng();
 //                    MapModel mapModel = new MapModel(latLng.latitude+"",latLng.longitude+"");
 //                    ChatModel chatModel = new ChatModel(userModel,Calendar.getInstance().getTime().getTime()+"",mapModel);
 //                    mFirebaseDatabaseReference.child(CHAT_REFERENCE).push().setValue(chatModel);
-                }else{
+                } else {
                     //PLACE IS NULL
                 }
             }
@@ -248,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Log.i(TAG,"onSuccess sendFileFirebase");
-                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        Uri downloadUrl = taskSnapshot.getUploadSessionUri();
                         FileModel fileModel = new FileModel("img",downloadUrl.toString(),name,"");
                         ChatModel chatModel = new ChatModel(userModel,"",Calendar.getInstance().getTime().getTime()+"",fileModel);
                         mFirebaseDatabaseReference.child(CHAT_REFERENCE).push().setValue(chatModel);
@@ -266,8 +265,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private void sendFileFirebase(StorageReference storageReference, final File file){
         if (storageReference != null){
             Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
-                    BuildConfig.APPLICATION_ID + ".provider",
-                    file);
+                    BuildConfig.APPLICATION_ID + ".provider",file);
             UploadTask uploadTask = storageReference.putFile(photoURI);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -278,7 +276,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Log.i(TAG,"onSuccess sendFileFirebase");
-                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                    Uri downloadUrl = taskSnapshot.getUploadSessionUri();
                     FileModel fileModel = new FileModel("img",downloadUrl.toString(),file.getName(),file.length()+"");
                     ChatModel chatModel = new ChatModel(userModel,"",Calendar.getInstance().getTime().getTime()+"",fileModel);
                     mFirebaseDatabaseReference.child(CHAT_REFERENCE).push().setValue(chatModel);
@@ -455,6 +453,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
 
+    @SuppressLint("RestrictedApi")
     public void animateFAB(){
 
         if(isFabOpen){
